@@ -28,6 +28,34 @@ namespace GradeBook
             return gradeList;
         }
 
+
+        public double GetAverage()
+        {
+            var result = 0.0;
+
+            foreach (var number in gradeList)
+            {
+                result += number;
+            }
+
+            result /= gradeList.Count;
+
+            return result;
+        }
+
+        public double HighesValue()
+        {
+            var highGrade = double.MinValue;
+            foreach (var number in gradeList)
+            {
+                if (number > highGrade)
+                {
+                    highGrade = number;
+                }
+            }
+            return highGrade;
+        }
+
         List<double> gradeList;
         string name;
     }

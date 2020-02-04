@@ -17,22 +17,18 @@ namespace GradeBook
             var book2 = new Book("A thousand splendid suns");
             book2.AddGrade(78.9);
 
-            var grades = new List<double> { 12.3, 7 };
-            var result = 0.0;
-            var highGrade = double.MinValue;
-            foreach (var number in grades)
-            {
-                if (number > highGrade)
-                {
-                    highGrade = number;
-                 }
+            var result = book.GetAverage();
 
-                result += number;
-            }
+            Console.WriteLine($"the average code is {result:N2}");
 
-            result /= grades.Count;
+            string name = "Anca";
+            var date = DateTime.Now;
 
-            Console.WriteLine($"the average code is {result:N1}");
+            // Composite formatting:
+            Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
+            // String interpolation:
+            Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
+
             Console.ReadKey();
         }
     }
