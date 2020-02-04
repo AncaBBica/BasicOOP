@@ -1,7 +1,0 @@
-C:\Home\Anca\Work\Projects\GradeBook\GradeBook\bin\Debug\GradeBook.exe.config
-C:\Home\Anca\Work\Projects\GradeBook\GradeBook\bin\Debug\GradeBook.exe
-C:\Home\Anca\Work\Projects\GradeBook\GradeBook\bin\Debug\GradeBook.pdb
-C:\Home\Anca\Work\Projects\GradeBook\GradeBook\obj\Debug\GradeBook.csprojAssemblyReference.cache
-C:\Home\Anca\Work\Projects\GradeBook\GradeBook\obj\Debug\GradeBook.csproj.CoreCompileInputs.cache
-C:\Home\Anca\Work\Projects\GradeBook\GradeBook\obj\Debug\GradeBook.exe
-C:\Home\Anca\Work\Projects\GradeBook\GradeBook\obj\Debug\GradeBook.pdb
