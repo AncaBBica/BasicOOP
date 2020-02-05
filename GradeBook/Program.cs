@@ -14,12 +14,11 @@ namespace GradeBook
             book.AddGrade(87.7);
             book.AddGrade(45.7);
 
-            var book2 = new Book("A thousand splendid suns");
-            book2.AddGrade(78.9);
+            var stats = book.GetStatistics();
 
-            var result = book.GetAverage();
-
-            Console.WriteLine($"the average code is {result:N2}");
+            Console.WriteLine($"The lowest value is {stats.Low}");
+            Console.WriteLine($"The highest value is {stats.High}");
+            Console.WriteLine($"The average value is {stats.Average:N1}");
 
             string name = "Anca";
             var date = DateTime.Now;
