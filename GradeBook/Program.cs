@@ -11,8 +11,37 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("Good Omens");
-            book.AddGrade(87.7);
-            book.AddGrade(45.7);
+
+            
+            while (true)
+            {
+                Console.WriteLine("Enter a grade or q to quit: ");
+                var input = Console.ReadLine();
+
+                if (input == "q")
+                {
+                    break;
+                }
+
+                try
+                {
+                    var grade = double.Parse(input);
+                    book.AddGrade(grade);
+                }
+                catch(ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("**");
+                }
+            } 
+
 
             var stats = book.GetStatistics();
 
@@ -21,7 +50,7 @@ namespace GradeBook
             Console.WriteLine($"The average value is {stats.Average:N1}");
 
             string name = "Anca";
-            var date = DateTime.Now;
+            var date = DateTime.Now; 
 
             // Composite formatting:
             Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);

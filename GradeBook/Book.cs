@@ -11,12 +11,19 @@ namespace GradeBook
         public Book(string name)
         {
             gradeList = new List<double>();
-            this.name = name;
+            Name = name;
         }
 
         public void AddGrade(double grade)
         {
-          gradeList.Add(grade);
+            if (grade <= 100 && grade > 0)
+            {
+                gradeList.Add(grade);
+            }
+            else
+            {
+                throw new ArgumentException($"Invalid {nameof(grade)}");
+            }
         }
 
         public Statistics GetStatistics()
@@ -42,6 +49,6 @@ namespace GradeBook
         
 
         List<double> gradeList;
-        string name;
+        public string Name { get; private set; }
     }
 }

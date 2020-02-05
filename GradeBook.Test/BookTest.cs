@@ -7,7 +7,7 @@ namespace GradeBook.Test
     public class BookTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void BookCalculatesAnAverageGrade()
         {
             //arrange
             var book = new Book("");
