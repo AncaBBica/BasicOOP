@@ -10,9 +10,29 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var book = new Book("Good Omens");
+            var book = new InMemoryBook("Good Omens");
+           
+            EnterGrades(book);
 
-            
+            var stats = book.GetStatistics();
+
+            Console.WriteLine($"The lowest value is {stats.Low}");
+            Console.WriteLine($"The highest value is {stats.High}");
+            Console.WriteLine($"The average value is {stats.Average:N1}");
+
+            string name = "Anca";
+            var date = DateTime.Now;
+
+            // Composite formatting:
+            Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
+            // String interpolation:
+            Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
+
+            Console.ReadKey();
+        }
+
+        private static void EnterGrades(Book book)
+        {
             while (true)
             {
                 Console.WriteLine("Enter a grade or q to quit: ");
@@ -28,7 +48,7 @@ namespace GradeBook
                     var grade = double.Parse(input);
                     book.AddGrade(grade);
                 }
-                catch(ArgumentException ex)
+                catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
@@ -40,24 +60,7 @@ namespace GradeBook
                 {
                     Console.WriteLine("**");
                 }
-            } 
-
-
-            var stats = book.GetStatistics();
-
-            Console.WriteLine($"The lowest value is {stats.Low}");
-            Console.WriteLine($"The highest value is {stats.High}");
-            Console.WriteLine($"The average value is {stats.Average:N1}");
-
-            string name = "Anca";
-            var date = DateTime.Now; 
-
-            // Composite formatting:
-            Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
-            // String interpolation:
-            Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
-
-            Console.ReadKey();
+            }
         }
     }
 }

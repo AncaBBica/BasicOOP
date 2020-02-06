@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace GradeBook
 {
-    public abstract class Book:NamedObject
+    public class NamedObject
     {
-        public Book(string name) : base(name)
+        public NamedObject(string name )
         {
+            Name = name;
         }
 
-        public abstract void AddGrade(double grade);
-
-       
+        public string Name { get; set; }
     }
 }
